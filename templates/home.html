@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+<style>
+    .homePageCard{
+        background-color: rgba(0, 0, 0, 0);
+        border: none;
+        margin-top: 6rem;
+    }
+
+</style>
+<div class="card text-center homePageCard" xmlns="http://www.w3.org/1999/html">
+    <div class="card-body">
+
+      <h2 class="card-title">Acme Auto Client Management System</h2>
+      <p class="card-text">Car Sales and Service Client Management System.</p>
+       {% if user.is_authenticated %}
+<!--          <p class="lead">-->
+               <a class="btn btn-primary" href="{% url 'client_list' %}" role="button">View All Clients</a>
+               <a class="btn btn-primary" href="{% url 'vechicle_list' %}" role="button">View Clients Vechicles</a>
+<!--          </p>-->
+
+        {% endif %}
+        {% if not user.is_authenticated %}
+            <p>Please login with your credentials or SignUp</p>
+        {% endif %}
+
+    </div>
+
+</div>
+{% endblock content %}

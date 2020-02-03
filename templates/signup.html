@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}Sign Up{% endblock title %}
+
+{% block content %}
+<style>
+    form, h4{
+
+        text-align: center;
+        }
+     button{
+            margin-left: 12rem;
+            margin-top: 1rem;
+        }
+     .form-group {
+            margin-bottom: 1rem !important;
+        }
+
+        .card-header {
+            background-color: rgb(143, 188, 143) !important;
+        }
+
+        form > div{
+            display:flex;
+            margin-bottom: 1rem !important;
+        }
+        label{
+            width:12rem;
+        }
+</style>
+
+        <div class="card">
+              <div class="card-header">
+                <h4>Sign Up</h4>
+              </div>
+            <div class="card-body">
+              <form method="post">
+                  {% csrf_token %}
+                  {{ form|crispy }}
+                  <button class="btn btn-success" type="submit">Sign Up</button>
+              </form>
+            </div>
+        </div>
+
+{% endblock content %}
+

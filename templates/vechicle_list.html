@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Clients{% endblock title %}
+
+{% block content %}
+
+  {% for vechicle in object_list %}
+
+    <div class="card clientListCard">
+      <div class="card-header">
+        
+        <div class="font-weight-bold">Name: {{vechicle.client.name}}</div>
+        <div class="font-weight-bold">Make: {{vechicle.make}}</div>
+        <div class="font-weight-bold">Model: {{vechicle.model}}</div>
+        <div class="font-weight-bold">Vin Number: {{vechicle.vin_number}}</div>
+        <div class="font-weight-bold">Purchase Date: {{vechicle.Date_Of_Purchase}}</div>
+        <div class="font-weight-bold">Last Service Date: {{vechicle.Date_Of_LastService}}</div>
+
+      </div>
+      <div class="card-footer">
+        <p><a href="{% url 'vechicle_edit' vechicle.pk %}" class="editbutton">Edit</a>  <a href="{% url 'vechicle_delete' vechicle.pk %}" class="deletebutton">Delete</a></p>
+
+      </div>
+    </div>
+
+
+  {% endfor %}
+
+{% endblock content %}

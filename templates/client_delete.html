@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    form, h4{
+
+        text-align: center;
+        }
+     button{
+            margin-left: 12rem;
+            margin-top: 1rem;
+        }
+     .form-group {
+            margin-bottom: 0rem !important;
+        }
+
+        .card-header {
+            background-color: rgb(143, 188, 143) !important;
+        }
+</style>
+        <div class="card">
+              <div class="card-header">
+                <h4>Delete</h4>
+              </div>
+            <div class="card-body">
+                 <form action="" method="post">{% csrf_token %}
+                  <p>Are you sure you want to delete "{{ client.name }}"?</p>
+                  <button class="btn btn-danger ml-2" type="submit">Confirm</button>
+                </form>
+            </div>
+        </div>
+
+{% endblock content %}
