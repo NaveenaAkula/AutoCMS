@@ -65,8 +65,8 @@ def comment(request, pk):
             comment.comment = comment.comment
             # Save the comment to the database
             comment.save()
-            print(comment.client)
-            messages.success(request, 'your  comment has been posted')
+            # print(comment.client)
+            # messages.success(request, 'your  comment has been posted')
             return redirect('client_detail', pk=post.pk)
     else:
         comment_form = CommentForm()
